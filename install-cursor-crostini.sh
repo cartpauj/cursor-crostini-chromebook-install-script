@@ -66,7 +66,7 @@ get_latest_cursor_url() {
     
     # Get the latest version info from Cursor's official download API
     local download_info
-    download_info=$(curl -s "https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable")
+    download_info=$(curl -sL "https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable")
     
     if [[ -z "$download_info" ]]; then
         print_error "Failed to fetch latest version information from Cursor API"
