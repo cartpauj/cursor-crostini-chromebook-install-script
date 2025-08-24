@@ -55,7 +55,8 @@ install_dependencies() {
     sudo apt update
     
     # Install FUSE and other dependencies required for AppImages
-    sudo apt install -y fuse libfuse2 wget curl
+    sudo apt install -y fuse libfuse2 wget curl libnss3-dev
+
     
     print_success "Dependencies installed successfully"
 }
