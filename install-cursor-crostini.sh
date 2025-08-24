@@ -55,7 +55,8 @@ install_dependencies() {
     sudo apt update
     
     # Install FUSE and other dependencies required for AppImages
-    sudo apt install -y fuse libfuse2 wget curl
+    sudo apt install -y fuse libfuse2 wget curl libnss3-dev
+
     
     print_success "Dependencies installed successfully"
 }
@@ -66,7 +67,7 @@ get_latest_cursor_url() {
     
     # Get the latest version info from Cursor's official download API
     local download_info
-    download_info=$(curl -sL "https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable")
+    download_info=$(curl -sL "https://cursor.com/api/download?platform=linux-x64&releaseTrack=stable")
     
     if [[ -z "$download_info" ]]; then
         print_error "Failed to fetch latest version information from Cursor API"
